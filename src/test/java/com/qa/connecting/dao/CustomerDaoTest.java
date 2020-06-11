@@ -22,8 +22,8 @@ import com.qa.connecting.model.Customer;
 public class CustomerDaoTest {
 	
 	static DatabaseConnection databaseConnection;
-	static final String SCHEMA_LOCATION = "src\\test\\resources\\Schema.sql";
-	static final String DATA_LOCATION = "src\\test\\resources\\Data.sql";
+	static final String SCHEMA_LOCATION = "src\\test\\resources\\ims schema.sql";
+	static final String DATA_LOCATION = "src\\test\\resources\\ims table.sql";
 	static final String CLEAR_LOCATION = "src\\test\\resources\\ClearDB.sql";
 	static final String DROP_LOCATION = "src\\test\\resources\\DropDB.sql";
 	
@@ -65,7 +65,7 @@ public class CustomerDaoTest {
 	@Test
 	public void test() throws SQLException {
 		CustomerDao customerdao = new CustomerDao(databaseConnection);
-		Customer test = new Customer("Chris", "Why do you care" ,"65 Zoo Lane");
+		Customer test = new Customer("Chris", "Antwi", "23 Rizla Rd", "cboy@gmail.co.uk", "tomnjerry");
 		customerdao.insertCustomer(test);
 		
 		String query = "SELECT * FROM customer";

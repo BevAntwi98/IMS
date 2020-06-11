@@ -1,6 +1,7 @@
 package com.qa.connecting.dao;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -29,10 +30,14 @@ public abstract class DatabaseConnection implements Openable, Closable, Queryabl
 			connection.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new ConnectionNotMadeException("Could not close connection");
+			throw new ConnectionNotMadeException("Could not close connection!");
 		}
 	}
 
+	public PreparedStatement getPreparedStatement(String sql) throws SQLException {
+		return connection.prepareStatement(sql);
+	}
+	
 	public ResultSet sendQuery(String sql) {
 		try {
 			Statement statement = connection.createStatement();			
