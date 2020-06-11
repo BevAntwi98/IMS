@@ -2,6 +2,7 @@ package com.qa.connecting.model;
 
 public class Item {
 
+	private int ID;
 	private String item_name;
 	private int quantity;
 	private int total_price;
@@ -14,6 +15,12 @@ public class Item {
 	}
 
 	
+
+	public Item() {
+		// TODO Auto-generated constructor stub
+	}
+
+
 
 	public int getQuantity() {
 		return quantity;
@@ -41,5 +48,17 @@ public class Item {
 
 	public void setItem_name(String item_name) {
 		this.item_name = item_name;
+	}
+
+
+
+	public int getID() {
+		return ID;
+	}
+
+
+
+	public void setID(int iD) {
+		ID = iD;
 	}
 }

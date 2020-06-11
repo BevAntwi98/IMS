@@ -63,16 +63,24 @@ public class CustomerController{
 			System.out.println("Customer details updated!");
 
 			Customer new_customer = new Customer(new_name, new_lastname, null, null, new_password);
+			
+			customerServices.updateCustomer(new_customer);
 
 			break;
 		}
 
 		case DELETE:
 			System.out.println("Which customer would you like to delete? ");
+		
 			String name_to_delete = input.getInput();
 			
-			LOGGER.info("Customer deleted!");
+			Customer delete_customer=new Customer();
+			
+			customerServices.deleteCustomer(delete_customer);
+			
+		LOGGER.info("Customer deleted!");
 			break;
+			
 
 		default:
 			LOGGER.warn("invalid selection");

@@ -45,5 +45,25 @@ public class CustomerServices {
 		}
 	}
 	
+    public void updateCustomer (Customer customer) {
+    	try {
+    		customerDao.updateCustomer(customer);
+    	} catch (SQLException e) {
+    		LOGGER.error(e.getMessage());
+			for (StackTraceElement element: e.getStackTrace()) {
+				LOGGER.debug(element);
+    	}
+    }
+}
 
+    public void deleteCustomer (Customer customer) {
+    	try {
+    		customerDao.deleteCustomer(customer);
+    	} catch (SQLException e) {
+    		LOGGER.error(e.getMessage());
+			for (StackTraceElement element: e.getStackTrace()) {
+				LOGGER.debug(element);
+			}
+    	}
+    }
 }

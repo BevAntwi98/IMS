@@ -23,15 +23,15 @@ public class Ims {
 
 	public void menu() {
 
-		// switch to work with which entity the user would like to play with?
-//		case CUSTOMERS:
+		System.out.println("MENU: Please select from the following: ");
+     //	case CUSTOMERS:
 		CustomerController  customerController = new CustomerController(input, new CustomerServices(new CustomerDao(connection)));
 		customerController.run(getUserAction());
 //		break;
 //		case ITEMS:
-//			ItemController itemController =  new ItemController(input, new ItemServices(new ItemDao(connection)));
-//			item controller.run(getUserAction())
-	}
+//		ItemController itemController =  new ItemController(input, new ItemServices(new ItemDao(connection)));
+	//	item controller.run(getUserAction())
+	//}
 	
 	public Action getUserAction() {
 		System.out.println("What would you like to do? : ");

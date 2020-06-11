@@ -67,10 +67,10 @@ public class CustomerDao {
 		preparedStatement.close();
 	}
 	
-	public void deleteCustomer(String customerName) throws SQLException {
+	public void deleteCustomer(Customer customer) throws SQLException {
 		String sql = "DELETE FROM CUSTOMER WHERE customer_name = ?";
 		PreparedStatement preparedStatement = databaseConnection.getPreparedStatement(sql);
-		preparedStatement.setString(1,customerName);
+		preparedStatement.setLong(1, customer.getId());
 		
 		preparedStatement.executeUpdate();
 		preparedStatement.close();
