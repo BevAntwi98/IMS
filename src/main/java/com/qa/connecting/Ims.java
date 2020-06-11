@@ -3,9 +3,12 @@ package com.qa.connecting;
 import org.apache.log4j.Logger;
 
 import com.qa.connecting.controllers.CustomerController;
+import com.qa.connecting.controllers.ItemController;
 import com.qa.connecting.dao.CustomerDao;
 import com.qa.connecting.dao.DatabaseConnection;
+import com.qa.connecting.dao.ItemDao;
 import com.qa.connecting.services.CustomerServices;
+import com.qa.connecting.services.ItemServices;
 import com.qa.connecting.utils.Input;
 
 public class Ims {
@@ -23,15 +26,24 @@ public class Ims {
 
 	public void menu() {
 
-		System.out.println("MENU: Please select from the following: ");
+	
      //	case CUSTOMERS:
+		
 		CustomerController  customerController = new CustomerController(input, new CustomerServices(new CustomerDao(connection)));
 		customerController.run(getUserAction());
-//		break;
+		
+	//	break;
+		
 //		case ITEMS:
-//		ItemController itemController =  new ItemController(input, new ItemServices(new ItemDao(connection)));
-	//	item controller.run(getUserAction())
-	//}
+		ItemController itemController =  new ItemController(input, new ItemServices(new ItemDao(connection)));
+		itemController.run(getUserAction());
+	}
+	
+	
+
+	//  case ORDERS:
+	  
+	
 	
 	public Action getUserAction() {
 		System.out.println("What would you like to do? : ");

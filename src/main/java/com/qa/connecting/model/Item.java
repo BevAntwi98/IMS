@@ -61,4 +61,10 @@ public class Item {
 	public void setID(int iD) {
 		ID = iD;
 	}
+
+@Override
+public String toString() {
+	return "Item [id=" + ID + ", item_name=" + item_name + ", quantity=" + quantity
+			+ ", total_price=" + total_price+ "]";
+}
 }
