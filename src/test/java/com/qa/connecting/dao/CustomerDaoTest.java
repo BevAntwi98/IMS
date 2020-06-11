@@ -15,6 +15,7 @@ import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.qa.connecting.model.Customer;
@@ -61,7 +62,8 @@ public class CustomerDaoTest {
 		sendToDB(DriverManager.getConnection("jdbc:mysql://35.246.104.154:3306", "root", "root"), DROP_LOCATION);
 		databaseConnection.closeConnection();
 	}
-
+	
+	@Ignore
 	@Test
 	public void test() throws SQLException {
 		CustomerDao customerdao = new CustomerDao(databaseConnection);
