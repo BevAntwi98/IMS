@@ -30,6 +30,6 @@ Calculate a cost for an order
 
 Delete an item in an order
 
-Author
+_Author_
 
 Beverly Antwi-Agyei
