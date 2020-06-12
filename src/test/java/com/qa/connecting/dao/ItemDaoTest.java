@@ -30,7 +30,7 @@ public class ItemDaoTest {
 		static final String CLEAR_LOCATION = "src\\test\\resources\\ClearDB.sql";
 		static final String DROP_LOCATION = "src\\test\\resources\\DropDB.sql";
 		
-		private void sendToDB(Connection connection, String fileLocation) {
+		private static void sendToDB(Connection connection, String fileLocation) {
 			try (BufferedReader br = new BufferedReader(new FileReader(fileLocation));) {
 				String string;
 				while ((string = br.readLine()) != null) {
@@ -85,4 +85,4 @@ public class ItemDaoTest {
 
 	}
 
-}
+

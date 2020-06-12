@@ -44,6 +44,9 @@ public class CustomerDao {
 			customer.setId(resultSet.getInt("customer_ID"));
 			customer.setCustomer_name(resultSet.getString("customer_name"));
 			customer.setCustomer_lastname(resultSet.getString("customer_lastname"));
+			customer.setEmail(resultSet.getString("email"));
+			customer.setAddress(resultSet.getString("address"));
+			customer.setPassword(resultSet.getString("password"));
 			customers.add(customer);
 		}
 		resultSet.close();
